@@ -1,7 +1,6 @@
-module.exports = {
+var uuid = require('uuid');
 
-  // Define a custom table name
-  tableName: 'user',
+module.exports = {
 
   // Set schema true/false for adapters that support schemaless
   schema: true,
@@ -35,5 +34,11 @@ module.exports = {
       collection: 'Comment'
     }
 
+  },
+
+  beforeCreate: function (article, next) {
+    // generare uid
+    article.uid = uuid.v4();
+    next(null, article);
   }
 };

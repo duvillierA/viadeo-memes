@@ -13,7 +13,7 @@ module.exports = {
     var ArticlesService = new sails.services.articles();
 
     ArticlesService.getAll(function(err, results){
-      sails.log.info('articles', results);
+      sails.log.info('display articles', results);
       return res.view({
         articles: results
       });

@@ -1,3 +1,5 @@
+var uuid = require('uuid');
+
 module.exports = {
 
   // Set schema true/false for adapters that support schemaless
@@ -22,5 +24,12 @@ module.exports = {
       model: 'User'
     }
 
+  },
+
+  beforeCreate: function (comment, next) {
+    // generare uid
+    comment.uid = uuid.v4();
+    next(null, comment);
   }
+
 };
