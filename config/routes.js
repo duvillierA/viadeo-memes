@@ -34,6 +34,12 @@ module.exports.routes = {
 
   'get /': 'HomeController.index',
 
+  'get /login': 'AuthController.login',
+  'get /logout': 'AuthController.logout',
+
+  'get /auth/:provider': 'AuthController.provider',
+  'get /auth/:provider/callback': 'AuthController.callback',
+
   'get /article/create': 'ArticleController.create',
   'post /article/create': 'ArticleController.createEndpoint',
 

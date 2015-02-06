@@ -26,7 +26,11 @@
     "sails-disk": "~0.10.0",
     "skipper": "^0.5.5",
     "skipper-s3": "^0.5.5",
-    "uuid": "latest"
+    "uuid": "latest",
+    "skipper-s3": "^0.5.5",
+    "passport": "~0.2.0",
+    "passport-google-oauth": "~0.1.5",
+    "moment" : "latest"
   },
   "scripts": {
     "start": "node app.js",

@@ -23,6 +23,10 @@ module.exports = {
     username : {
       type: 'string',
       unique: true
+    },
+
+    photo_url : {
+      type: 'string'
     }
 
   },
