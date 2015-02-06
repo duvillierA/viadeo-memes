@@ -24,22 +24,4 @@ module.exports = {
       });
     });
   },
-
-  /**
-   * ArticleController.destroy()
-   */
-  destroy: function (req, res) {
-    return res.json({
-      todo: 'Not implemented yet!'
-    });
-  },
-
-  /**
-   * ArticleController.like()
-   */
-  like: function (req, res) {
-    return res.json({
-      todo: 'Not implemented yet!'
-    });
-  }
 };

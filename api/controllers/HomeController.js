@@ -5,7 +5,9 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-var url = require('url');
+var url = require('url'),
+  moment = require('moment'),
+  _ = require('lodash');
 
 module.exports = {
   index: function (req, res) {
@@ -14,8 +16,9 @@ module.exports = {
 
     ArticlesService.getAll(function(err, results){
       sails.log.info('display articles', results);
+
       return res.view({
-        articles: results
+        articles: ArticlesService.addTimestamp(results)
       });
     });
   }
