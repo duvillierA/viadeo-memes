@@ -10,7 +10,7 @@ module.exports = {
 
     uid: {
       type: 'string',
-      required: true,
+      unique: true,
       primaryKey: true
     },
 
@@ -31,7 +31,8 @@ module.exports = {
     },
 
     comments: {
-      collection: 'Comment'
+      collection: 'Comment',
+      via: 'author'
     }
 
   },

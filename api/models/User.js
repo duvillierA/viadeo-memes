@@ -21,7 +21,7 @@ module.exports = {
     },
 
     username : {
-      model: 'User',
+      type: 'string',
       unique: true
     }
 

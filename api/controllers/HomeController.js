@@ -17,6 +17,6 @@ module.exports = {
       return res.view({
         articles: results
       });
-    })
+    });
   }
 };

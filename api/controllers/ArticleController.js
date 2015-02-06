@@ -10,14 +10,17 @@ module.exports = {
   createEndpoint: function (req, res) {
     req.file('image').upload({
       adapter: require('skipper-s3'),
-      key: 'S3 Key',
-      secret: 'S3 Secret',
-      bucket: 'Bucket Name'
+      key: sails.config.aws.key,
+      secret: sails.config.aws.secret,
+      bucket: 'viadeo-memes'
     }, function (err, filesUploaded) {
       if (err) return res.negotiate(err);
-      return res.ok({
-        files: filesUploaded,
-        textParams: req.params.all()
+      var articleService = new sails.services.articles();
+      articleService.create(filesUploaded[0].extra.Location, req.body.description, '', function(err, result){
+        if(err){
+          res.negotiate(err);
+        }
+        res.redirect('/');
       });
     });
   },
