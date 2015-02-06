@@ -1,10 +1,14 @@
 module.exports = {
 
+  create: function (req, res) {
+    return res.view();
+  },
+
   /**
    * ArticleController.create()
    */
   createEndpoint: function (req, res) {
-    req.file('article').upload({
+    req.file('image').upload({
       adapter: require('skipper-s3'),
       key: 'S3 Key',
       secret: 'S3 Secret',
@@ -12,7 +16,7 @@ module.exports = {
     }, function (err, filesUploaded) {
       if (err) return res.negotiate(err);
       return res.ok({
-        files: uploadedFiles,
+        files: filesUploaded,
         textParams: req.params.all()
       });
     });

@@ -32,7 +32,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /': 'HomeController.index'
+  'get /': 'HomeController.index',
+
+  'get /article/create': 'ArticleController.create',
+  'post /article/create': 'ArticleController.createEndpoint',
 
   /***************************************************************************
   *                                                                          *
