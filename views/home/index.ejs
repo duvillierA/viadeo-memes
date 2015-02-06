@@ -1,1 +1,7 @@
-index.ejs
+<div class="article text-center">
+  <% for(var i=0; i<articles.length; i++) {%>
+    <h2 class="author"><%= articles[i].author.username %></h2>
+    <p class="lead"><%= articles[i].description %></p>
+    <p><img src="<%= articles[i].image_url %>" /></p>
+  <% } %>
+</div>

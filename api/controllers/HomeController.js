@@ -9,6 +9,14 @@ var url = require('url');
 
 module.exports = {
   index: function (req, res) {
-    return res.view();
+
+    var ArticlesService = new sails.services.articles();
+
+    ArticlesService.getAll(function(err, results){
+      sails.log.info('articles', results);
+      return res.view({
+        articles: results
+      });
+    })
   }
 };

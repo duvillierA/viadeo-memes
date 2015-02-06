@@ -19,7 +19,7 @@ module.exports = {
       model: 'User'
     },
 
-    image: {
+    image_url: {
       type: 'string',
       defaultsTo: '',
       required: true
