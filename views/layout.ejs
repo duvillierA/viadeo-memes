@@ -46,8 +46,7 @@
       <div class="header-user text-center">
         <%if (user) { %>
           <p><img src="<%= user.photo_url %>" alt="<%= user.userName %>" class="img-circle" /></p>
-          <p class="text-lead"><%= user.userName %></p>
-          <a href="/logout">logout</a>
+          <p class="text-lead"><strong><%= user.userName %></strong>, <a href="/logout">logout</a></p>
         <% } %>
         <div class="text-center">
           <a href="/" class="btn btn-default">
@@ -88,7 +87,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
 
