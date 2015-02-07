@@ -6,7 +6,9 @@
 
 <div class="article text-center">
   <% for(var i=0; i<articles.length; i++) {%>
-    <h2 class="author"><%= articles[i].username %></h2>
+    <%if (articles[i].author) { %>
+      <h2 class="author"><%= articles[i].author.userName %></h2>
+    <% } %>
     <p class="lead"><%= articles[i].description %></p>
     <p><img src="<%= articles[i].image_url %>" /></p>
     <p class="date"><%= articles[i].date %></p>

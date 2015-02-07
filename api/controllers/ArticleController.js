@@ -8,6 +8,7 @@ module.exports = {
    * ArticleController.create()
    */
   createEndpoint: function (req, res) {
+
     req.file('image').upload({
       adapter: require('skipper-s3'),
       key: sails.config.aws.key,
@@ -15,8 +16,9 @@ module.exports = {
       bucket: 'viadeo-memes'
     }, function (err, filesUploaded) {
       if (err) return res.negotiate(err);
-      var articleService = new sails.services.articles();
-      articleService.create(filesUploaded[0].extra.Location, req.body.description, '', function(err, result){
+      var articleService = new sails.services.articles(),
+       userId = req.body.anonymous==='on' ? '' : req.user.uid;
+      articleService.create(filesUploaded[0].extra.Location, req.body.description, userId, function(err, result){
         if(err){
           res.negotiate(err);
         }
