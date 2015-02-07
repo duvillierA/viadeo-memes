@@ -16,9 +16,7 @@ module.exports = function (req, res, next) {
   // or if this is the last policy, the controller
   // temp allow *
 
-  console.log('authenticated', res.locals.user);
-
-  if (req.user || res.locals.user || req.path === loginRoute) {
+  if (req.user || req.path === loginRoute) {
     return next();
   };
 
