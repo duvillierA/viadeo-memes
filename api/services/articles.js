@@ -8,6 +8,7 @@ function Articles() {
 Articles.prototype.getAll = function (callback) {
   sails.models.article
     .find()
+    .sort('createdAt DESC')
     .populate('author')
     .then(function (result){
       return callback(null, result);
@@ -15,7 +16,6 @@ Articles.prototype.getAll = function (callback) {
 };
 
 Articles.prototype.create = function (imageUrl, description, authorId, category, callback) {
-  console.log(arguments);
   sails.models.article
   .create({
     image_url: imageUrl,

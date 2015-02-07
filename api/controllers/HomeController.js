@@ -13,10 +13,7 @@ module.exports = {
   index: function (req, res) {
 
     var ArticlesService = new sails.services.articles();
-
     ArticlesService.getAll(function(err, results){
-      sails.log.info('display articles', results);
-
       return res.view({
         articles: ArticlesService.addTimestamp(results)
       });
