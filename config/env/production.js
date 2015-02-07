@@ -23,7 +23,7 @@ module.exports = {
   aws: {
     key: process.env.AWSKEY,
     secret: process.env.AWSSECRET
-  }
+  },
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *
