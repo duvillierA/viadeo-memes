@@ -30,6 +30,12 @@ module.exports = {
       required: true
     },
 
+    category : {
+      type: 'string',
+      defaultsTo: 'Engineering',
+      enum: ['Engineering', 'Product', 'Marketing', 'Management', 'Sales', 'Advertising', 'Human ressources']
+    },
+
     comments: {
       collection: 'Comment',
       // via: 'author'

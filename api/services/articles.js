@@ -14,12 +14,14 @@ Articles.prototype.getAll = function (callback) {
     }).fail(callback);
 };
 
-Articles.prototype.create = function (imageUrl, description, authorId, callback) {
+Articles.prototype.create = function (imageUrl, description, authorId, category, callback) {
+  console.log(arguments);
   sails.models.article
   .create({
     image_url: imageUrl,
     description: description,
-    author: authorId
+    author: authorId,
+    category: category
   }).then(function (){
     return  callback(null);
   }).fail(callback);

@@ -17,8 +17,9 @@ module.exports = {
     }, function (err, filesUploaded) {
       if (err) return res.negotiate(err);
       var articleService = new sails.services.articles(),
-       userId = req.body.anonymous==='on' ? '' : req.user.uid;
-      articleService.create(filesUploaded[0].extra.Location, req.body.description, userId, function(err, result){
+       userId = req.body.anonymous==='on' ? '' : req.user.uid,
+       category = req.body.category;
+      articleService.create(filesUploaded[0].extra.Location, req.body.description, userId, category, function(err, result){
         if(err){
           res.negotiate(err);
         }
