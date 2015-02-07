@@ -2,6 +2,7 @@
   "name": "viadeo-memes",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "RRSSB": "~1.6.0"
   }
 }

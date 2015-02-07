@@ -19,9 +19,9 @@
       <%if (providers) { %>
         <ul class="rrssb-buttons list-unstyled">
         <% _.forEach(providers, function(item) {%>
-          <li class="<%= item.slug %><%if (item.isGoogle) { %>plus<% } %> col-xs-12 col-sm-<%= providers_row %>">
+          <li class="rrssb-<%= item.slug %><%if (item.isGoogle) { %>plus<% } %> col-xs-12 col-sm-<%= providers_row %>">
             <a href="/auth/<%= item.slug %>" class="auth-provider-link">
-              <span class="icon">
+              <span class="rrssb-icon">
                 <%if (item.isGoogle) { %>
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -43,6 +43,9 @@
                 </g>
                 </svg>
                 <% } %>
+              </span>
+              <span class="rrssb-text text">
+                <%= item.name %>
               </span>
             </a>
           </li>
