@@ -16,6 +16,13 @@
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.policies.html
  */
 
+const AUTHORIZED = true;
+const UNAUTHORIZED = false;
+
+var filters = ['middl_helpers'],
+  commonPolicies = filters.concat(['passport']),
+  WebPolicies = commonPolicies.concat(['authenticated']);
+
 
 module.exports.policies = {
 
@@ -26,8 +33,9 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  '*': ['middl_helpers'],
-  '/': ['middl_helpers']
+  '*': commonPolicies,
+
+  'articleController': WebPolicies
 
   /***************************************************************************
   *                                                                          *

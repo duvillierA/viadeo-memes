@@ -42,6 +42,17 @@
 
   <body>
     <main class="site-content pbxl">
+
+
+      <%if (user) { %>
+       <div class="header-user text-center">
+          <p><img src="<%= user.photo_url %>" alt="<%= user.userName %>" class="img-circle" /></p>
+          <p class="text-lead"><%= user.userName %></p>
+          <a href="/logout">logout</a>
+        </div>
+      <% } %>
+
+
       <div class='container'>
         <%- body %>
       </div>

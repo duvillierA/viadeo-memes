@@ -10,7 +10,7 @@ module.exports = {
 
     uid: {
       type: 'string',
-      required: true,
+      unique: true,
       primaryKey: true
     },
 
@@ -20,7 +20,7 @@ module.exports = {
       unique: true
     },
 
-    username : {
+    userName : {
       type: 'string',
       unique: true
     },

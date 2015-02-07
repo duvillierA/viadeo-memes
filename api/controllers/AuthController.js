@@ -99,6 +99,7 @@ var AuthController = {
         sails.log.error(err);
       }
       req.login(user, function (err) {
+        console.log('login', err, req.flash('back')[0]);
         // If an error was thrown, redirect the user to the login which should
         // take care of rendering the error messages.
         if (err) {

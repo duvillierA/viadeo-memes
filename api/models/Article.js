@@ -31,8 +31,7 @@ module.exports = {
     },
 
     comments: {
-      collection: 'Comment',
-      via: 'author'
+      collection: 'Comment'
     }
 
   },

@@ -1,4 +1,14 @@
 {
-	"Welcome": "Welcome",
-	"A brand new app.": "A brand new app."
+  "Error.Passport.auth.forbidden": "<strong>You must be logged in</strong>, to view this page",
+  "Error.Passport.Password.Invalid": "The provided password is invalid!",
+  "Error.Passport.Password.Wrong": "That password wasn't quite right!",
+  "Error.Passport.Password.NotSet": "The email address and password do not match. So try to connect to Facebook, Twitter or Google.",
+  "Error.Passport.Username.NotFound": "What's your name again?",
+  "Error.Passport.Email.NotFound": "That email doesn't seem right",
+  "Error.Passport.User.Exists": "This username is already taken.",
+  "Error.Passport.Email.Missing": "You need to supply an email-address for verification.",
+  "Error.Passport.Email.Exists": "<strong>This email already exists</strong>. So try logging in.",
+  "Error.Passport.Username.Missing": "You need to supply a username.",
+  "Error.Passport.Password.Missing": "You haven't set a password yet!",
+  "Error.Passport.Generic": "<strong>Something went wrong with authorization</strong>. Please retry."
 }

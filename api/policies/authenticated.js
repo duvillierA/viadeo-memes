@@ -7,16 +7,22 @@
  * @docs        :: http://sailsjs.org/#!documentation/policies
  *
  */
-module.exports = function(req, res, next) {
+
+module.exports = function (req, res, next) {
+
+  var loginRoute = '/login';
 
   // User is allowed, proceed to the next policy,
   // or if this is the last policy, the controller
-  console.log('sessiotauth')
-  if (req.session.authenticated) {
-    return next();
-  }
+  // temp allow *
 
-  // User is not allowed
-  // (default res.forbidden() behavior can be overridden in `config/403.js`)
-  return res.forbidden('You are not permitted to perform this action.');
+  console.log('authenticated', res.locals.user);
+
+  if (req.user || res.locals.user || req.path === loginRoute) {
+    return next();
+  };
+
+  req.flash('back', req.path);
+  req.flash_alert('Error.Passport.auth.forbidden');
+  return res.redirect('/login');
 };

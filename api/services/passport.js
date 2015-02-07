@@ -98,9 +98,11 @@ passport.connect = function (req, query, userObj, profile, next) {
     .then(function getUser(passport) {
       var _user;
       if (!req.user) {
-        _user = User.findOne({
-          uid: passport.user
-        });
+        if(passport) {
+          _user = User.findOne({
+            uid: passport.user
+          });
+        }
       } else {
         _user = req.user;
       }

@@ -9,7 +9,7 @@
             <div class="col-xs-12">
                 <div class="alerts mbl">
                   <div class="alert alert-<%= alert.type %> mbn" role="alert">
-                    <%= alert.message %>
+                    <%- __(alert.message) %>
                   </div>
                 </div>
             </div>
@@ -18,11 +18,11 @@
 
       <%if (providers) { %>
         <ul class="rrssb-buttons list-unstyled">
-        <% for(var i=0; i<providers.length; i++) {%>
-          <li class="<%= slug %><%if (providers) { %>plus<% } %> col-xs-12 col-sm-<%= providers_row %>">
-            <a href="/auth/provider" class="auth-provider-link">
+        <% _.forEach(providers, function(item) {%>
+          <li class="<%= item.slug %><%if (item.isGoogle) { %>plus<% } %> col-xs-12 col-sm-<%= providers_row %>">
+            <a href="/auth/<%= item.slug %>" class="auth-provider-link">
               <span class="icon">
-                <%if (isGoogle) { %>
+                <%if (item.isGoogle) { %>
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                 <g>
@@ -46,7 +46,7 @@
               </span>
             </a>
           </li>
-        <% } %>
+        <% }) %>
         </ul>
       <% } %>
 

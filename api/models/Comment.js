@@ -10,7 +10,7 @@ module.exports = {
 
     uid: {
       type: 'string',
-      required: true,
+      unique: true,
       primaryKey: true
     },
 
