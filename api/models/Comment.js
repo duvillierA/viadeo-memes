@@ -15,7 +15,7 @@ module.exports = {
     },
 
     text : {
-      type: 'stirng',
+      type: 'string',
       required: true,
       maxLength: 300
     },
