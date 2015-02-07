@@ -1,16 +1,16 @@
-<div class="text-center">
-  <a href="/article/create" class="btn btn-primary">
-    Create a meme
-  </a>
-</div>
-
-<div class="article text-center">
+<div class="articles text-center">
   <% for(var i=0; i<articles.length; i++) {%>
-    <%if (articles[i].author) { %>
-      <h2 class="author"><%= articles[i].author.userName %></h2>
-    <% } %>
-    <p class="lead"><%= articles[i].description %></p>
-    <p><img src="<%= articles[i].image_url %>" /></p>
-    <p class="date"><%= articles[i].category %>, <%= articles[i].date %></p>
+    <div class="row">
+      <div class="article col-xs-12 col-md-8 col-md-offset-2">
+        <%if (articles[i].author) { %>
+          <h2 class="author"><%= articles[i].author.userName %></h2>
+        <% } else { %>
+          <p class="text-muted">Anonymous</p>
+         <% } %>
+        <p class="lead"><%= articles[i].description %></p>
+        <p><img src="<%= articles[i].image_url %>" /></p>
+        <p class="text-muted date"><%= articles[i].category %>, <%= articles[i].date %></p>
+      </div>
+    </div>
   <% } %>
 </div>

@@ -43,14 +43,21 @@
   <body>
     <main class="site-content pbxl">
 
-
-      <%if (user) { %>
-       <div class="header-user text-center">
+      <div class="header-user text-center">
+        <%if (user) { %>
           <p><img src="<%= user.photo_url %>" alt="<%= user.userName %>" class="img-circle" /></p>
           <p class="text-lead"><%= user.userName %></p>
           <a href="/logout">logout</a>
+        <% } %>
+        <div class="text-center">
+          <a href="/" class="btn btn-default">
+            See memes
+          </a>
+          <a href="/article/create" class="btn btn-primary">
+            Create a meme
+          </a>
         </div>
-      <% } %>
+      </div>
 
 
       <div class='container'>
@@ -81,7 +88,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
 
