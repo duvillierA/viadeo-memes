@@ -22,8 +22,8 @@ module.exports.passport = {
     strategy: require('passport-google-oauth').OAuth2Strategy,
     scope: ['openid', 'email', 'profile'],
     options: {
-      clientID: '951034080900-ke0nlskih3uts9l1prrqio14rrg2skg7.apps.googleusercontent.com',
-      clientSecret: 'pI9vkcmV2yTpI92vctNAWaZq'
+      clientID: '',
+      clientSecret: ''
     }
   }
 
